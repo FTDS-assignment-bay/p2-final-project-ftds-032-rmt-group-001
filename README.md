@@ -14,7 +14,7 @@ To provide accurate recommedations to users, GuideMe is optimized through the fo
 - Recommend courses to users with similarity score above XX.
 
 ## **Dataset**
-The dataset is acquired through web scraping the online learning platform, **Coursera**. Visit the [Coursera homepage] (https://coursera.org) to explore more the available courses.
+The dataset is acquired through web scraping the online learning platform, **Coursera**. Visit the [Coursera homepage](https://coursera.org) to explore more the available courses.
 
 ## Workflow
 ### Data Engineering
