@@ -96,11 +96,9 @@ def run():
 
         return df.iloc[filtered_indices]
 
-    # Streamlit UI
-    st.title('Course Recommendation System')
-    
-    # Additional image
+    # Streamlit UI    
     st.image("gambar2.jpg")
+    st.title('Course Recommendation System')
     st.write('Discover your new journey in learning. 🎓')
 
     # Tambahkan CSS untuk memperbesar komponen
