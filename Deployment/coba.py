@@ -217,12 +217,6 @@ def run():
                                     <div class="course-title">{row['title']}</div>
                                 </div>
                             """, unsafe_allow_html=True)
-                            with st.expander("Description"):
-                                st.write(row['description'])
-                            with st.expander("Instructor"):
-                                st.write(row['instructor'])
-                            with st.expander("Modules"):
-                                st.write(row['modules'])
                             st.markdown(f"""
                                 <a class="course-link" href="{row['url']}" target="_blank">Go to Course</a>
                             """, unsafe_allow_html=True)

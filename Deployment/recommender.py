@@ -182,50 +182,44 @@ def run():
                     <a class="course-link" href="{row['url']}" target="_blank">Go to Course</a>
                 """, unsafe_allow_html=True)
 
-    # # Filter box
-    # if not st.session_state.recommendations.empty:
-    #     st.write("Filter your results:")
-    #     with st.expander("Filter options", expanded=True):
-    #         st.markdown('<div class="filter-box">', unsafe_allow_html=True)
-    #         min_rating = st.slider('Choose a minimum rating:', 0.0, 5.0, 0.0, 0.1, key='rating')
-    #         selected_level = st.selectbox('Filter by level:', ['All'] + df['level'].unique().tolist(), key='level')
-    #         selected_price = st.selectbox('Filter by price:', ['All', 'Free', 'Enroll'], key='price')
-    #         st.markdown('</div>', unsafe_allow_html=True)
+    # Filter box
+    if not st.session_state.recommendations.empty:
+        st.write("Filter your results:")
+        with st.expander("Filter options", expanded=True):
+            st.markdown('<div class="filter-box">', unsafe_allow_html=True)
+            min_rating = st.slider('Choose a minimum rating:', 0.0, 5.0, 0.0, 0.1, key='rating')
+            selected_level = st.selectbox('Filter by level:', ['All'] + df['level'].unique().tolist(), key='level')
+            selected_price = st.selectbox('Filter by price:', ['All', 'Free', 'Enroll'], key='price')
+            st.markdown('</div>', unsafe_allow_html=True)
 
-    #         if st.button('Apply Filter'):
-    #             recommendations = st.session_state.recommendations.copy()
-    #             if min_rating > 0:
-    #                 recommendations = recommendations[recommendations['rating'] >= min_rating]
-    #             if selected_level != 'All':
-    #                 recommendations = recommendations[recommendations['level'] == selected_level]
-    #             if selected_price != 'All':
-    #                 if selected_price == 'Free':
-    #                     recommendations = recommendations[recommendations['price'].str.lower() == 'free']
-    #                 else:
-    #                     recommendations = recommendations[recommendations['price'].str.lower() != 'free']
+            if st.button('Apply Filter'):
+                recommendations = st.session_state.recommendations.copy()
+                if min_rating > 0:
+                    recommendations = recommendations[recommendations['rating'] >= min_rating]
+                if selected_level != 'All':
+                    recommendations = recommendations[recommendations['level'] == selected_level]
+                if selected_price != 'All':
+                    if selected_price == 'Free':
+                        recommendations = recommendations[recommendations['price'].str.lower() == 'free']
+                    else:
+                        recommendations = recommendations[recommendations['price'].str.lower() != 'free']
                 
-    #             st.session_state.filtered_recommendations = recommendations.head(3)  # Tampilkan top 3 setelah filter
+                st.session_state.filtered_recommendations = recommendations.head(3)  # Tampilkan top 3 setelah filter
 
-    #             if not recommendations.empty:
-    #                 st.write("Filtered results (top 3):")
-    #                 cols = st.columns(3)  # Membuat layout grid dengan 3 kolom untuk tampilan yang lebih besar
-    #                 for index, row in recommendations.head(3).iterrows():
-    #                     with cols[index % 3]:  # Menampilkan kursus dalam kolom grid
-    #                         st.markdown(f"""
-    #                             <div class="course-container">
-    #                                 <img src="{row['image']}" alt="{row['title']}">
-    #                                 <div class="course-title">{row['title']}</div>
-    #                             </div>
-    #                         """, unsafe_allow_html=True)
-    #                         with st.expander("Description"):
-    #                             st.write(row['description'])
-    #                         with st.expander("Instructor"):
-    #                             st.write(row['instructor'])
-    #                         with st.expander("Modules"):
-    #                             st.write(row['modules'])
-    #                         st.markdown(f"""
-    #                             <a class="course-link" href="{row['url']}" target="_blank">Go to Course</a>
-    #                         """, unsafe_allow_html=True)
+                if not recommendations.empty:
+                    st.write("Filtered results (top 3):")
+                    cols = st.columns(3)  # Membuat layout grid dengan 3 kolom untuk tampilan yang lebih besar
+                    for index, row in recommendations.head(3).iterrows():
+                        with cols[index % 3]:  # Menampilkan kursus dalam kolom grid
+                            st.markdown(f"""
+                                <div class="course-container">
+                                    <img src="{row['image']}" alt="{row['title']}">
+                                    <div class="course-title">{row['title']}</div>
+                                </div>
+                            """, unsafe_allow_html=True)
+                            st.markdown(f"""
+                                <a class="course-link" href="{row['url']}" target="_blank">Go to Course</a>
+                            """, unsafe_allow_html=True)
 
 # Run the app
 if __name__ == '__main__':
