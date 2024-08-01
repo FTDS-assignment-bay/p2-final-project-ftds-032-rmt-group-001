@@ -30,7 +30,7 @@ The dataset is acquired from Kaggle [Coursera Courses Dataset](https://www.kaggl
 
 
 ## **Deployment**
-Hugging Face [Course Recommendation System](https://huggingface.co/spaces/Iznia/Course_Recommendation_System)
+Hugging Face [GuideMe - Course Recommendation](https://huggingface.co/spaces/Iznia/GuideMe-Course_Recommendation)
 
 
 ## **Authors**
