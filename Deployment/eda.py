@@ -28,7 +28,7 @@ def run():
         ax.axis("off")
         st.pyplot(fig)
         st.write("**Insight:** Courses in Coursera are dominated by IT and Data domains. "
-                "The top 3 course categories are Support and Operations, Design and Product, Data Analysis.")
+                "The top 3 course categories are Cloud Computing, Data Analysis, Business Essentials.")
 
     # Function to plot course level distribution
     def plot_course_level_distribution(df):
