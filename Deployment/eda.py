@@ -7,6 +7,7 @@ from wordcloud import WordCloud
 
 # Create the main program
 def run():
+    
     st.title("Exploratory Data Analysis")
 
     # Load the dataset

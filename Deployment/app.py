@@ -2,7 +2,6 @@ import eda
 import recommender
 import streamlit as st
 
-
 # Add side bar for navigation
 navigation = st.sidebar.selectbox('Navigation', ['Home', 'Exploratory Data Analysis', 'Course Recommendation'])
 
