@@ -1,0 +1,14 @@
+streamlit
+pandas
+numpy
+nltk
+gensim
+scikit-learn
+langdetect
+wordcloud
+matplotlib
+seaborn
+torch
+transformers
+datasets
+sentencepiece
