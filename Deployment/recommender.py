@@ -97,8 +97,10 @@ def run():
         return df.iloc[filtered_indices]
 
     # Streamlit UI
-
     st.title('Course Recommendation System')
+    
+    # Additional image
+    st.image("gambar2.jpg")
     st.write('Discover your new journey in learning. 🎓')
 
     # Tambahkan CSS untuk memperbesar komponen
@@ -152,7 +154,7 @@ def run():
         st.session_state.filtered_recommendations = pd.DataFrame()
 
     # Get recommendations based on user input
-    if st.button('Check!'):
+    if st.button('GuideMe!🔍'):
         if input_course:
             st.session_state.recommendations = get_user_recommendations(input_course)
             st.session_state.filtered_recommendations = st.session_state.recommendations

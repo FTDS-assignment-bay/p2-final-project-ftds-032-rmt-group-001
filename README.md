@@ -9,12 +9,13 @@ GuideMe is a recommender system project designed to help students find their des
 
 ## **Project Objectives**
 To provide accurate recommedations to users, GuideMe is optimized through the following steps:
-- Analyze 5 text columns (title, description, instructors, modules, syllabus) by employing NLP with Word2Vec methods.
+- Analyze 4 text columns (title, description, instructors, modules) by employing NLP with Word2Vec methods.
 - Measure similarity between text input and the dataset using Cosine Similarity to find the best match.
 - Recommend courses to users with similarity score above XX.
 
 ## **Dataset**
-The dataset is acquired through web scraping the online learning platform, **Coursera**. Visit the [Coursera homepage](https://coursera.org) to explore more the available courses.
+The dataset is acquired from Kaggle [Coursera Courses Dataset](https://www.kaggle.com/datasets/muhammadanasmahmood/coursera-courses-dataset) and through web scraping the online learning platform, Coursera. Visit the [Coursera Homepage](https://coursera.org/) to explore more the available courses.
+
 
 ## Workflow
 ### Data Engineering
@@ -40,7 +41,7 @@ Hugging Face // insert link
 
 - **Iznia Azyati**
   - Role: Data Scientist 
-  - [Github]() | [LinkedIn]()
+  - [Github](https://github.com/Iznia) | [LinkedIn](https://www.linkedin.com/in/iznia-azyati/)
 
 - **Talitha Salsabila**
   - Role: Data Analyst

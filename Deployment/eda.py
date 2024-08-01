@@ -8,7 +8,6 @@ from wordcloud import WordCloud
 # Create the main program
 def run():
     st.title("Exploratory Data Analysis")
-    st.write("Here we can add EDA components and visualizations.")
 
     # Load the dataset
     dataset_path = "coursera_dataset.csv"
@@ -16,7 +15,6 @@ def run():
 
     # Additional image
     st.image("gambar1.jpg")
-
 
     # Function to generate word cloud
     def generate_word_cloud(data, title):
@@ -114,20 +112,8 @@ def run():
             df['rating'].max()
         ))
 
-    # Function for course search
-    def course_search(df):
-        st.subheader("Course Search")
-        search_query = st.text_input("Enter course title, description, modules, or instructor to search:")
-        if search_query:
-            results = df[df['title'].str.contains(search_query, case=False, na=False) |
-                        df['description'].str.contains(search_query, case=False, na=False) |
-                        df['modules'].str.contains(search_query, case=False, na=False) |
-                        df['instructor'].str.contains(search_query, case=False, na=False)]
-            st.write(f"Found {len(results)} results")
-            st.dataframe(results)
 
     # Streamlit app
-    st.title("Exploratory Data Analysis")
     st.write("Discover insights from the Coursera dataset.")
 
     # Display raw data
@@ -135,12 +121,10 @@ def run():
         st.dataframe(df)
 
     # Select analysis
-    analysis_type = st.selectbox("Select Analysis", ["Overview", "Course Search", "Distribution Plots", "Categorical Analysis", "Word Cloud"])
+    analysis_type = st.selectbox("Select Analysis", ["Overview", "Distribution Plots", "Categorical Analysis", "Word Cloud"])
 
     if analysis_type == "Overview":
         overview(df)
-    elif analysis_type == "Course Search":
-        course_search(df)
     elif analysis_type == "Distribution Plots":
         st.subheader("Course Level Distribution")
         plot_course_level_distribution(df)
